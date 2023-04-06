@@ -36,7 +36,7 @@ import {
 
 const navItems = [
   {
-    text: "dashboard",
+    text: "Dashboard",
     icon: <HomeOutlined />
   },
   {
@@ -152,8 +152,6 @@ const Sidebar = ({
                   );
                 }
                 const menuPath = text.toLowerCase();
-
-                console.log(menuPath, active, "<< menu path active mbener gar")
 
                 return (
                   <ListItem key={text} disablePadding>
