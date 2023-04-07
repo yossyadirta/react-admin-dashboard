@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from './FlexBetween';
-import profileImage from "../assets/profile.jpg";
+// import profileImage from "../assets/profile.jpg";
 import {
   Box,
-  Divider,
+  // Divider,
   Drawer,
   IconButton,
   List,
@@ -31,7 +31,7 @@ import {
   PieChartOutline,
   ReceiptLongOutlined,
   PublicOutlined,
-  SettingsOutlined
+  // SettingsOutlined
 } from '@mui/icons-material';
 
 const navItems = [
@@ -194,7 +194,7 @@ const Sidebar = ({
             </List>
           </Box>
 
-          <Box position={'absolute'} bottom={"2rem"}>
+          {/* <Box position='absolute' bottom="2rem">
             <Divider />
             <FlexBetween textTransform={"none"} gap="1rem" m="1.5rem 2rem 0 3rem">
               <Box 
@@ -216,7 +216,7 @@ const Sidebar = ({
                   sx={{ color: theme.palette.secondary[300], fontSize: "25px"}}
                 />
             </FlexBetween>
-          </Box>
+          </Box> */}
         </Drawer>
       )}
     </Box>
