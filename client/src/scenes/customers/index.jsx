@@ -44,12 +44,15 @@ const Customers = () => {
     },
   ];
 
-  const dataWithIdx = data.map((obj, idx) => {
-    return {
-      ...obj,
-      no: idx + 1,
-    };
-  });
+  const dataWithIdx = data
+    ? data.map((obj, idx) => {
+        return {
+          ...obj,
+          no: idx + 1,
+        };
+      })
+    : [];
+
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="CUSTOMERS" subtitle="List of Customers" />
