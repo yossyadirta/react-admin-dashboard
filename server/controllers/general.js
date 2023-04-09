@@ -27,7 +27,11 @@ export const getDashboardStats = async (req, res) => {
       .sort({ createdOn: -1 });
 
     /* Overall Stats */
-    const overallStat = await OverallStat.find({ year: currentYear });
+    let overallStat = await OverallStat.find({ year: currentYear });
+
+    if (overallStat.length === 0) {
+      overallStat = await OverallStat.find({ year: "2021" });
+    }
 
     const {
       totalCustomers,
@@ -38,11 +42,13 @@ export const getDashboardStats = async (req, res) => {
     } = overallStat[0];
 
     const thisMonthStats = overallStat[0].monthlyData.find(({ month }) => {
-      return month === currentMonth;
+      if (month === currentMonth) return true;
+      return month === "November";
     });
 
     const todayStats = overallStat[0].dailyData.find(({ date }) => {
-      return date === currentDay;
+      if (date === currentDay) return true;
+      return date === "2021-11-15";
     });
 
     res.status(200).json({
